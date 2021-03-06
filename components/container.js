@@ -1,3 +1,7 @@
-export default function Container({ children }) {
-  return <div className="container mx-auto px-5">{children}</div>
+export default function Container({children}) {
+  return (
+    <div className="flex my-14 gap-10 max-w-7xl mx-auto flex-col md:flex-row px-5 md:px-20">
+      {children}
+    </div>
+  )
 }

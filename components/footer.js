@@ -1,30 +1,45 @@
-import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+import Link from './link'
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
-          </div>
+    <footer className="bg-lightBlue-600 text-white flex flex-col text-center border-t border-white">
+      <div className="max-w-4xl mx-auto">
+        <span className="text-4xl font-light text mt-4 block">
+          roadTo<span className="font-semibold">Mastery</span>
+        </span>
+        <nav className="flex items-center mt-7 mb-10 text-xl tracking-wide">
+          <ul className="flex gap-4 mx-auto">
+            <li>
+              <Link href="/">
+                <a className="hover:text-orange-400 transition">Blog</a>
+              </Link>
+            </li>
+            {/* <li>
+              <Link href="/about">
+                <a className="hover:text-orange-400 transition">About</a>
+              </Link>
+            </li> */}
+            <li>
+              <Link href="/contact">
+                <a className="hover:text-orange-400 transition">Contact</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div className="bg-lightBlue-700">
+        <div className="max-w-4xl mx-auto my-5 space-y-4 text-sm font-light">
+          {/* <p>
+            <Link href="/terms">
+              <a className="hover:text-orange-400 transition">
+                Terms of Service, Privacy Policy and Cookies Policy
+              </a>
+            </Link>
+          </p> */}
+          <p>Copyright &copy; roadToMastery.dev 2021. All Rights Reserved.</p>
         </div>
-      </Container>
+      </div>
     </footer>
   )
 }
