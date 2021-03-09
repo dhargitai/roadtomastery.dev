@@ -44,7 +44,12 @@ export default function BlogPosts({posts}) {
                   />
                 </div>
               ) : null}
-              <div className="space-y-4">{excerpt}</div>
+              <div
+                className="space-y-4"
+                dangerouslySetInnerHTML={{
+                  __html: `<p>${excerpt.split('\n').join('</p><p>')}</p>`
+                }}
+              ></div>
 
               <Link as={`/blog/${slug}`} href="/blog/[slug]">
                 <a className="bg-orange-500 text-white w-full block py-2 mt-6 text-center hover:bg-orange-600 focus:shadow-inner relative rounded transition clear-both">

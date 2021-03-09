@@ -1,12 +1,12 @@
 import {useRouter} from 'next/router'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
-import Layout from '../../components/layout'
-import {getPostBySlug, getAllPosts} from '../../lib/api'
+import Container from '@components/container'
+import Layout from '@components/layout'
+import {getPostBySlug, getAllPosts} from '@lib/api'
 import Head from 'next/head'
 import Image from 'next/image'
-import markdownToHtml from '../../lib/markdownToHtml'
-import DateFormatter from '../../components/date-formatter'
+import markdownToHtml from '@lib/markdownToHtml'
+import DateFormatter from '@components/date-formatter'
 
 export default function Post({post, preview}) {
   const router = useRouter()
@@ -26,7 +26,9 @@ export default function Post({post, preview}) {
               <>
                 <Head>
                   <title>{post.title} | roadToMastery</title>
-                  <meta property="og:image" content={post.ogImage.url} />
+                  {post.ogImage && post.ogImage.url ? (
+                    <meta property="og:image" content={post.ogImage.url} />
+                  ) : null}
                 </Head>
 
                 <h1 className="font-bold text-3xl mb-4 md:text-5xl md:mb-6">
