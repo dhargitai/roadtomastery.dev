@@ -1,7 +1,17 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./components/**/*.{js,jsx}', './pages/**/*.{js,jsx}'],
+  purge: {
+    content: ['./components/**/*.{js,jsx}', './pages/**/*.{js,jsx}'],
+
+    // These options are passed through directly to PurgeCSS
+    options: {
+      safelist: [/^prose/],
+      blocklist: [/^debug-/],
+      keyframes: true,
+      fontFace: true
+    }
+  },
   theme: {
     extend: {
       colors: {
