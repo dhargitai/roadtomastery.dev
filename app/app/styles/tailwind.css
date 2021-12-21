@@ -732,11 +732,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid {
   display: grid;
 }
+.h-5 {
+  height: 1.25rem;
+}
 .h-7 {
   height: 1.75rem;
 }
 .w-full {
   width: 100%;
+}
+.w-5 {
+  width: 1.25rem;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
