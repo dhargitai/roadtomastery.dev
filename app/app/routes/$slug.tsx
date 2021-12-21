@@ -11,10 +11,11 @@ type PostData = {
   title: string,
   categories: Array<{ title: string, slug: string }>
   body: string;
+  excerpt: string;
 };
 
 export let loader: LoaderFunction = async ({ params }) => {
-  const matchingPosts = await content.fetch("*[_type == 'post' && slug.current == $slug] {publishedAt, _updatedAt, slug, title, body, 'categories': categories[]->{title, slug}}", {
+  const matchingPosts = await content.fetch("*[_type == 'post' && slug.current == $slug] {publishedAt, _updatedAt, slug, title, body, excerpt, 'categories': categories[]->{title, slug}}", {
     slug: params.slug
   });
 
@@ -27,10 +28,10 @@ export let loader: LoaderFunction = async ({ params }) => {
   return json(data);
 };
 
-export let meta: MetaFunction = () => {
+export let meta: MetaFunction = ({data} : { data: PostData }) => {
   return {
-    title: "Road to Mastery development blog",
-    description: "Learnings, thoughts and other materials on the journey of web development",
+    title: `${data.title} | Road to Mastery`,
+    description: data.excerpt,
   };
 };
 

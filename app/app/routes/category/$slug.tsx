@@ -4,7 +4,7 @@ import content from "~/utils/content.server";
 import PostExcerpt from '~/components/post-excerpt'
 import type { Category, Post } from '~/types';
 
-type IndexData = {
+type CategoryPageData = {
   posts: Array<Post>;
   category: Category;
 };
@@ -18,7 +18,7 @@ export let loader: LoaderFunction = async ({ params }) => {
   });
   
 
-  let data: IndexData = {
+  let data: CategoryPageData = {
     posts,
     category: categories[0]
   };
@@ -26,15 +26,15 @@ export let loader: LoaderFunction = async ({ params }) => {
   return json(data);
 };
 
-export let meta: MetaFunction = () => {
+export let meta: MetaFunction = ({data} : { data: CategoryPageData }) => {
   return {
-    title: "Road to Mastery development blog",
-    description: "Learnings, thoughts and other materials on the journey of web development",
+    title: `${data.category.title} category posts | Road to Mastery`,
+    description: `Collection of posts in "${data.category.title}" category.`,
   };
 };
 
 export default function Index() {
-  let data = useLoaderData<IndexData>();
+  let data = useLoaderData<CategoryPageData>();
 
   return (
     <div className="flex flex-wrap container px-5 py-12 mx-auto">
