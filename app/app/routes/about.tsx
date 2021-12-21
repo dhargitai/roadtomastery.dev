@@ -16,7 +16,7 @@ export default function Index() {
 
         <p>Hey, I'm David Hargitai, software (web, frontend) engineer, currently working at Born Group.</p>
         <p>From time to time I experience with technologies to try them out, learn more about them by doing and building something.</p>
-        <p><Logo />, this development blog is one of these projects. It's built with Remix (React framework), Tailwind CSS, Sanity.io, and it's hosted on Fly.io. This is a fantastic stack to work with!</p>
+        <p><Logo />, this development blog is one of these projects. It's built with Remix (React framework), Tailwind CSS, Sanity.io, and it's hosted on <strike>Fly.io</strike> Netlify (I wasn't able to setup even a simple deployment on Fly.io...). This is a fantastic stack to work with!</p>
         <p>I also experiment with writing articles here as that's also a whole skill on its own and I need to practice a lot.</p>
         <p>Enjoy your time here! :)</p>
       </main>
