@@ -1,0 +1,6 @@
+node_modules
+app/.cache
+app/netlify/functions/server/build
+app/public/build
+app/.netlify
+studio/dist

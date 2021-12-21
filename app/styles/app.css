@@ -1,0 +1,34 @@
+body {
+  background: url('/wickedbackground.svg') top right transparent no-repeat;
+  background-size: cover;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Proza Libre', serif;
+}
+
+.logo {
+  color: rgb(255,133,0);
+  font-family: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace";
+  font-weight: 700;
+}
+
+.logo .lesser-greater-sign {
+  color: rgb(53,40,131);
+  font-weight: normal;
+}
+
+.logo .property {
+  color: rgb(133,95,255);
+  font-style: italic;
+  
+}
+
+.logo .equals {
+  color: rgb(255,133,0);
+  font-weight: normal;
+}
+
+.logo .string {
+  color: rgb(0,	184, 105);
+}
